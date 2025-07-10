@@ -1,6 +1,7 @@
 <script lang="ts">
   import Hero from '$lib/components/Hero.svelte';
   import About from '$lib/components/About.svelte';
+  import Services from '$lib/components/Services.svelte';
   import Navigation from '$lib/components/Navigation.svelte';
 </script>
 
@@ -12,3 +13,4 @@
 <Navigation />
 <Hero />
 <About />
+<Services />
