@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { ExternalLink, Code, Database, Smartphone } from 'lucide-svelte';
+  import Code from "@lucide/svelte/icons/code";
+  import ExternalLink from "@lucide/svelte/icons/external-link";
+
   import AffordablesGHMockImg from '$lib/assets/img/affordablesgh-site-mockup.png?enhanced';
 
   const whatsappMessage = encodeURIComponent("Hi Daniel! I'd like to discuss making my project the next case study.");

@@ -1,7 +1,11 @@
 <script lang="ts">
   import Typewriter from "svelte-typewriter";
+  import Zap from "@lucide/svelte/icons/zap";
+  import Code from "@lucide/svelte/icons/code";
+  import Users from "@lucide/svelte/icons/users";
   // import { TypeWriter } from 'svelte-typewrite';
-  import { Download, MessageCircle, ArrowRight, Code, Zap, Users } from 'lucide-svelte';
+  import ArrowRight from "@lucide/svelte/icons/arrow-right";
+  import MessageCircle from "@lucide/svelte/icons/message-circle";
 
   const whatsappMessage = encodeURIComponent("Hi Daniel! I'm interested in discussing a project with you.");
   const whatsappUrl = `https://wa.me/2348034411661?text=${whatsappMessage}`;

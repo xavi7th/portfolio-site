@@ -1,5 +1,9 @@
 <script lang="ts">
-  import { Rocket, Users, Zap, Briefcase, MessageCircle } from 'lucide-svelte';
+  import Zap from "@lucide/svelte/icons/zap";
+  import Users from "@lucide/svelte/icons/users";
+  import Rocket from "@lucide/svelte/icons/rocket";
+  import Briefcase from "@lucide/svelte/icons/briefcase";
+  import MessageCircle from "@lucide/svelte/icons/message-circle";
 
   const whatsappMessage = encodeURIComponent("Hi Daniel! I'm interested in your services.");
   const whatsappUrl = `https://wa.me/2348034411661?text=${whatsappMessage}`;
@@ -74,7 +78,7 @@
   <div class="container-custom">
     <div class="text-center mb-16 animate-slide-up">
       <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-        From Vision to Version 1 - <span class="gradient-text">Let's Build What Matters.</span>
+        From Vision to V1 - <span class="gradient-text">Let's Build What Matters.</span>
       </h2>
     </div>
 

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { Menu, X } from 'lucide-svelte';
+  import X from "@lucide/svelte/icons/x";
+  import Menu from "@lucide/svelte/icons/menu";
 
   let isScrolled = false;
   let isMobileMenuOpen = false;
@@ -8,6 +9,7 @@
   const navItems = [
     { href: '#about', label: 'About' },
     { href: '#services', label: 'What I Do' },
+    { href: '#projects', label: 'Projects' },
     { href: '#contact', label: 'Contact' }
   ];
 

@@ -1,5 +1,8 @@
 <script lang="ts">
-  import { Code, Database, Zap, Download } from 'lucide-svelte';
+  import Zap from "@lucide/svelte/icons/zap";
+  import Code from "@lucide/svelte/icons/code";
+  import Download from "@lucide/svelte/icons/download";
+  import Database from "@lucide/svelte/icons/database";
 
   const whatsappMessage = encodeURIComponent("Hi Daniel! I'd like to discuss working together.");
   const whatsappUrl = `https://wa.me/2348034411661?text=${whatsappMessage}`;
