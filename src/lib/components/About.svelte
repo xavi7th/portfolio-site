@@ -29,7 +29,7 @@
         </p>
 
         <p>
-          While I'm skilled across the stack, my true strength lies in the back end—where systems are built, scale is engineered, and performance is forged.
+          While I'm skilled across the stack, my true strength lies in the back end — where systems are built, scale is engineered, and performance is forged.
         </p>
       </div>
     </div>
@@ -63,7 +63,7 @@
             <Zap class="text-primary-600 mt-1" size={24} />
             <div>
               <p class="text-gray-700 leading-relaxed">
-                What truly excites me is watching ideas evolve into high-performance, real-world applications… apps that users love and businesses trust to grow on.
+                Whichever hat I don, what truly excites me is watching ideas evolve into high-performance, real-world applications… apps that users love and businesses trust to grow on.
               </p>
             </div>
           </div>
