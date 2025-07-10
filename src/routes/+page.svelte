@@ -1,5 +1,6 @@
 <script lang="ts">
   import Hero from '$lib/components/Hero.svelte';
+  import Navigation from '$lib/components/Navigation.svelte';
 </script>
 
 <svelte:head>
@@ -7,4 +8,5 @@
   <meta name="description" content="15+ years of full-stack experience. I build scalable web applications with Laravel, PHP, SvelteJS, VueJS, and other modern frontend frameworks, turning your visions into reality." />
 </svelte:head>
 
+<Navigation />
 <Hero />
