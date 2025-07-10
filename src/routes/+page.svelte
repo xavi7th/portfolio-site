@@ -6,6 +6,7 @@
   import Projects from '$lib/components/Projects.svelte';
   import Navigation from '$lib/components/Navigation.svelte';
   import Achievements from '$lib/components/Achievements.svelte';
+  import Testimonials from '$lib/components/Testimonials.svelte';
 </script>
 
 <svelte:head>
@@ -19,4 +20,5 @@
 <Services />
 <Projects />
 <Achievements />
+<!-- <Testimonials /> -->
 <Contact />
