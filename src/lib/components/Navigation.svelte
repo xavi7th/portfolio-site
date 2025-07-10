@@ -30,6 +30,10 @@
     <div class="flex items-center justify-between h-16">
       <a href="#" class="text-xl font-bold flex items-center gap-4 {isScrolled ? 'text-gray-900' : 'text-white'}">
         Daniel E. Akhile
+        <div class="inline-flex items-center gap-2 {isScrolled ? 'bg-green-600/30 border-green-600/60' : 'bg-green-500/20 border-green-500/30'} border rounded-full px-2 py-1">
+          <div class="w-2 h-2 {isScrolled ? 'bg-green-800' : 'bg-green-400'} rounded-full animate-pulse"></div>
+          <span class="{isScrolled ? 'text-green-800' : 'text-green-300'} font-medium text-tiny">Available for new projects</span>
+        </div>
       </a>
 
       <div class="hidden md:flex items-center space-x-8">
