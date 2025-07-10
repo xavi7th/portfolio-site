@@ -16,8 +16,19 @@ Thumbs.db
 .env
 .env.*
 !.env.example
-!.env.test
 
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Windsurf rules
+.windsurfrules
+
+# Others
+*.pdf
+*.mp4
+deploy-post-receive-script.sh
+api-deploy-post-receive-script.sh
+frontend-deploy-post-receive-script.sh
+api/storage/rector/
+frontend/*.log
