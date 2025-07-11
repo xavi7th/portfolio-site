@@ -75,7 +75,7 @@
 
         <p class="mb-8 text-xl leading-relaxed text-gray-300 md:text-2xl">
           Backend focused full-stack web developer with <strong class="text-white">{new Date().getFullYear() - 2010}+ years</strong>
-           experience building scalable web applications that users love and businesses depend on.
+          experience building scalable web applications that users love and businesses depend on.
         </p>
 
         <div class="mb-8 grid gap-4 md:grid-cols-2">
@@ -168,7 +168,7 @@
               <div class="ml-4 text-gray-300">
                 <span class="text-blue-400">private</span>
                 <span class="text-green-400">$specialties</span>
-                 = [
+                = [
               </div>
               <div class="ml-8 text-gray-300">
                 <span class="text-orange-400">'PHP/Laravel'</span>

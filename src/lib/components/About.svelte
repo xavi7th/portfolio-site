@@ -23,7 +23,7 @@
       <div class="text-gray-700">
         <p>
           With over <strong>15 years of experience</strong>
-           building full-stack digital products from fast-moving MVPs to enterprise-grade platforms, I've helped startups and tech teams turn raw ideas into rock-solid, scalable software.
+          building full-stack digital products from fast-moving MVPs to enterprise-grade platforms, I've helped startups and tech teams turn raw ideas into rock-solid, scalable software.
         </p>
 
         <p class="py-8 text-xl font-semibold text-primary-600">Code isn't just my job… it's my obsession.</p>
