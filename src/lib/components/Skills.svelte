@@ -18,8 +18,8 @@
         { name: "TailwindCSS", level: "Confident", icon: "🎯" },
         { name: "jQuery", level: "Expert", icon: "📱" },
         { name: "Bootstrap", level: "Expert", icon: "🅱️" },
-        { name: "Svelte", level: "Exploring", icon: "🔥" }
-      ]
+        { name: "Svelte", level: "Exploring", icon: "🔥" },
+      ],
     },
     {
       icon: Server,
@@ -31,8 +31,8 @@
         { name: "Node.js", level: "Confident", icon: "💚" },
         { name: "REST APIs", level: "Expert", icon: "🔗" },
         { name: "Express", level: "Confident", icon: "⚡" },
-        { name: "Blade Templates", level: "Expert", icon: "🗡️" }
-      ]
+        { name: "Blade Templates", level: "Expert", icon: "🗡️" },
+      ],
     },
     {
       icon: Database,
@@ -43,8 +43,8 @@
         { name: "SQLite", level: "Expert", icon: "💎" },
         { name: "PostgreSQL", level: "Confident", icon: "🐘" },
         { name: "Firebase", level: "Confident", icon: "🔥" },
-        { name: "Redis", level: "Exploring", icon: "🔴" }
-      ]
+        { name: "Redis", level: "Exploring", icon: "🔴" },
+      ],
     },
     {
       icon: Tool,
@@ -58,23 +58,23 @@
         { name: "VS Code", level: "Expert", icon: "💙" },
         { name: "Figma", level: "Confident", icon: "🎨" },
         { name: "Trello", level: "Expert", icon: "📋" },
-        { name: "Notion", level: "Confident", icon: "📝" }
-      ]
-    }
+        { name: "Notion", level: "Confident", icon: "📝" },
+      ],
+    },
   ];
 
   const currentlyExploring = [
     { name: "TypeScript", icon: "📘" },
     { name: "Docker", icon: "🐳" },
     { name: "Next.js", icon: "⚫" },
-    { name: "Redis", icon: "🔴" }
+    { name: "Redis", icon: "🔴" },
   ];
 
   const getLevelColor = (level: string) => {
     const colors = {
-      "Expert": "bg-green-100 text-green-800 border-green-200",
-      "Confident": "bg-blue-100 text-blue-800 border-blue-200",
-      "Exploring": "bg-yellow-100 text-yellow-800 border-yellow-200"
+      Expert: "bg-green-100 text-green-800 border-green-200",
+      Confident: "bg-blue-100 text-blue-800 border-blue-200",
+      Exploring: "bg-yellow-100 text-yellow-800 border-yellow-200",
     };
     return colors[level as keyof typeof colors] || colors.Expert;
   };
@@ -83,43 +83,43 @@
 <section id="skills" class="section-padding bg-white">
   <div class="container-custom">
     <!-- Header -->
-    <div class="text-center mb-16 animate-slide-up">
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+    <div class="mb-16 animate-slide-up text-center">
+      <h2 class="mb-6 text-4xl font-bold text-gray-900 md:text-5xl">
         <span class="gradient-text">My Full Tech Stack</span>
       </h2>
 
       <!-- Current Focus Badge -->
-      <div class="inline-flex items-center gap-2 bg-primary-50 border border-primary-200 rounded-full px-6 py-3 mb-8">
+      <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-6 py-3">
         <TrendingUp class="text-primary-600" size={20} />
-        <span class="text-primary-800 font-semibold">Current Stack Focus:</span>
-        <span class="text-primary-600 font-bold">Laravel + VueJS + MySQL + TailwindCSS</span>
+        <span class="font-semibold text-primary-800">Current Stack Focus:</span>
+        <span class="font-bold text-primary-600">Laravel + VueJS + MySQL + TailwindCSS</span>
       </div>
     </div>
 
     <!-- Skills Categories -->
-    <div class="grid lg:grid-cols-2 gap-8 mb-16">
+    <div class="mb-16 grid gap-8 lg:grid-cols-2">
       {#each skillCategories as category, index}
-        <div class="card-hover bg-gray-50 rounded-2xl p-8 animate-slide-up" style="animation-delay: {index * 0.1}s;">
+        <div class="card-hover animate-slide-up rounded-2xl bg-gray-50 p-8" style="animation-delay: {index * 0.1}s;">
           <!-- Category Header -->
-          <div class="flex items-start gap-4 mb-6">
-            <div class="bg-primary-100 p-3 rounded-lg">
+          <div class="mb-6 flex items-start gap-4">
+            <div class="rounded-lg bg-primary-100 p-3">
               <svelte:component this={category.icon} class="text-primary-600" size={28} />
             </div>
             <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">{category.title}</h3>
-              <p class="text-gray-600 leading-relaxed">{category.subtitle}</p>
+              <h3 class="mb-2 text-2xl font-bold text-gray-900">{category.title}</h3>
+              <p class="leading-relaxed text-gray-600">{category.subtitle}</p>
             </div>
           </div>
 
           <!-- Skills Grid -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {#each category.skills as skill}
               <div class="group relative">
-                <div class="bg-white rounded-lg p-4 border border-gray-200 hover:border-primary-300 transition-all duration-300 hover:shadow-md">
+                <div class="rounded-lg border border-gray-200 bg-white p-4 transition-all duration-300 hover:border-primary-300 hover:shadow-md">
                   <div class="text-center">
-                    <div class="text-2xl mb-2">{skill.icon}</div>
-                    <div class="text-sm font-semibold text-gray-900 mb-1">{skill.name}</div>
-                    <span class="inline-block px-2 py-1 text-xs font-medium rounded-full border {getLevelColor(skill.level)}">
+                    <div class="mb-2 text-2xl">{skill.icon}</div>
+                    <div class="mb-1 text-sm font-semibold text-gray-900">{skill.name}</div>
+                    <span class="inline-block rounded-full border px-2 py-1 text-xs font-medium {getLevelColor(skill.level)}">
                       {skill.level}
                     </span>
                   </div>
@@ -132,27 +132,25 @@
     </div>
 
     <!-- Currently Exploring -->
-    <div class="text-center animate-slide-up">
-      <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-8 border border-yellow-200">
-        <div class="flex items-center justify-center gap-3 mb-6">
+    <div class="animate-slide-up text-center">
+      <div class="rounded-2xl border border-yellow-200 bg-gradient-to-r from-yellow-50 to-orange-50 p-8">
+        <div class="mb-6 flex items-center justify-center gap-3">
           <span class="text-3xl">🧪</span>
           <h3 class="text-2xl font-bold text-gray-900">Currently Exploring</h3>
         </div>
 
         <div class="flex flex-wrap justify-center gap-4">
           {#each currentlyExploring as skill}
-            <div class="bg-white rounded-lg p-4 border border-yellow-300 hover:border-yellow-400 transition-all duration-300 hover:shadow-md">
+            <div class="rounded-lg border border-yellow-300 bg-white p-4 transition-all duration-300 hover:border-yellow-400 hover:shadow-md">
               <div class="text-center">
-                <div class="text-2xl mb-2">{skill.icon}</div>
+                <div class="mb-2 text-2xl">{skill.icon}</div>
                 <div class="text-sm font-semibold text-gray-900">{skill.name}</div>
               </div>
             </div>
           {/each}
         </div>
 
-        <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
-          I'm always learning and staying current with the latest technologies to deliver cutting-edge solutions.
-        </p>
+        <p class="mx-auto mt-6 max-w-2xl text-gray-600">I'm always learning and staying current with the latest technologies to deliver cutting-edge solutions.</p>
       </div>
     </div>
   </div>

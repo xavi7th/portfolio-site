@@ -2,7 +2,7 @@
   "bracketSameLine": false,
   "endOfLine": "lf",
   "htmlWhitespaceSensitivity": "ignore",
-  "overrides": [{"files": "*.svelte", "options": {"parser": "svelte"}}],
+  "overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }],
   "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
   "printWidth": 220,
   "singleAttributePerLine": false,
@@ -10,9 +10,9 @@
   "svelteIndentScriptAndStyle": true,
   "svelteBracketNewLine": false,
   "tabWidth": 2,
-  "tailwindConfig": "./frontend/tailwind.config.js",
+  "tailwindConfig": "./tailwind.config.js",
   "tailwindFunctions": ["clsx", "cn", "tw"],
-  "tailwindStylesheet": "./frontend/src/app.css",
+  "tailwindStylesheet": "./src/app.css",
   "trailingComma": "all",
   "useTabs": false
 }

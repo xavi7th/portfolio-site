@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 @config "../tailwind.config.js";
@@ -9,21 +9,21 @@
   }
 
   body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+    @apply transform rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-primary-700 hover:shadow-lg;
 
-    &.gradient{
-      @apply bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700
+    &.gradient {
+      @apply bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700;
     }
   }
 
   .btn-secondary {
-    @apply bg-white hover:bg-gray-50 text-primary-600 border-2 border-primary-600 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105;
+    @apply transform rounded-lg border-2 border-primary-600 bg-white px-6 py-3 font-semibold text-primary-600 transition-all duration-300 hover:scale-105 hover:bg-gray-50;
   }
 
   .section-padding {
@@ -31,7 +31,7 @@
   }
 
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
   .gradient-text {
@@ -39,7 +39,7 @@
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
   }
 }
 
@@ -48,7 +48,6 @@
   --text-tiny--line-height: 1rem;
   --text-tiny--letter-spacing: 0;
   --text-tiny--font-weight: 300;
-
 
   --color-primary-50: #f3f1ff;
   --color-primary-100: #ebe5ff;
@@ -61,8 +60,6 @@
   --color-primary-800: #5a03d5;
   --color-primary-900: #4c02ad;
   --color-primary-950: #2e0176;
-
-
 
   --color-secondary-50: #f8fafc;
   --color-secondary-100: #f1f5f9;

@@ -62,7 +62,6 @@ if (target === "frontend") {
 
   console.log("Copying package.json and node loader script into build folder...");
   execSync("(cd ./frontend && cp -f package.json src/loader.cjs build)", { stdio: "inherit" });
-
 } else {
   console.log("Running build...");
   execSync("(cd ./api && bun run build)", { stdio: "inherit" });
