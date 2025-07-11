@@ -10,6 +10,7 @@
     { href: '#about', label: 'About' },
     { href: '#services', label: 'What I Do' },
     { href: '#projects', label: 'Projects' },
+    { href: '#skills', label: 'Skills' },
     { href: '#contact', label: 'Contact' }
   ];
 
