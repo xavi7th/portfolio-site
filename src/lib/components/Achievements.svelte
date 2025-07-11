@@ -25,7 +25,7 @@
       icon: "🧠",
       title: "Senior Software Developer",
       subtitle: "Full-Time",
-      company: "theElects Gadgets",
+      company: "theElects Ventures",
       location: "Lagos, Nigeria",
       period: "2019 - 2021",
       highlights: [
