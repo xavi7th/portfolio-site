@@ -1,12 +1,12 @@
-//TO RUN THIS SCRIPT RUN bun run push -- api OR bun run push -- frontend OR bun run push
-//When run without an option, it defaults to api
+//TO RUN THIS SCRIPT RUN bun run deploy -- api OR bun run deploy -- web OR bun run deploy
+//When run without an option, it defaults to web
 
 import fs from "fs";
 import { execSync } from "child_process";
 
-const target = process.argv[2] || "api"; // Defaults to frontend
-const prefix = target === "api" ? "api" : "frontend";
-const remoteServerName = `${prefix}-remote`; // Assumes remotes are named `api-remote` and `frontend-remote`. check this out with git remote
+const target = process.argv[2] || "web"; // Defaults to web
+const prefix = target === "api" ? "api" : "web";
+const remoteServerName = `${prefix}`; // Assumes remotes are named `api` and `web`. Check this out with git remote
 const branch = `deploy/${prefix}`;
 const CONTINUE_FILE = ".deploy_continue";
 
@@ -29,9 +29,9 @@ if (!isResuming) {
   console.log(`Switching to ${branch} branch...`);
   execSync(`git checkout ${branch}`, { stdio: "inherit" });
 
-  console.log(`Merging development branch into ${branch}...`);
+  console.log(`Merging master branch into ${branch}...`);
   try {
-    execSync("git merge development --no-edit", { stdio: "inherit" });
+    execSync("git merge master --no-edit", { stdio: "inherit" });
   } catch (_) {
     console.error("❌ Merge conflict detected! Resolve conflicts, then re-run `bun run push`.");
     fs.writeFileSync(CONTINUE_FILE, "true"); // Mark that we're in the middle of a merge
@@ -48,20 +48,19 @@ if (target === "api") {
   execSync("sed -i.bak '/public\\/[build\\\\|vendor\\\\|conference]/d' ./.gitignore", { stdio: "inherit" });
 } else {
   console.log("Updating .gitignore to allow public files...");
-  execSync("sed -i.bak '/frontend\\/build/d' ./.gitignore", { stdio: "inherit" });
-  execSync("sed -i.bak '/build/d' ./frontend/.gitignore", { stdio: "inherit" });
+  execSync("sed -i.bak '/\\/build/d' ./.gitignore", { stdio: "inherit" });
 }
 
 // Run the build process
-if (target === "frontend") {
+if (target === "web") {
   console.log("Creating build folder if not exists");
-  execSync("mkdir -p ./frontend/build", { stdio: "inherit" });
+  execSync("mkdir -p ./build", { stdio: "inherit" });
 
   console.log("Running build...");
-  execSync("(cd ./frontend && bun run build -m production)", { stdio: "inherit" });
+  execSync("(bun run build -m production)", { stdio: "inherit" });
 
   console.log("Copying package.json and node loader script into build folder...");
-  execSync("(cd ./frontend && cp -f package.json src/loader.cjs build)", { stdio: "inherit" });
+  execSync("(cp -f package.json src/loader.cjs build)", { stdio: "inherit" });
 } else {
   console.log("Running build...");
   execSync("(cd ./api && bun run build)", { stdio: "inherit" });
@@ -81,15 +80,14 @@ if (postBuildStatus) {
 // Push only the relevant folder as subtree
 console.log(`Pushing changes in ${prefix} folder to ${remoteServerName}...`);
 try {
-  // execSync(`git subtree push --prefix=${prefix} ${remoteServerName} master`, { stdio: "inherit" });
   console.log("Creating subtree split...");
   const subtreeCommit = execSync(`git subtree split --prefix=${prefix} ${branch}`, { stdio: "pipe" }).toString().trim();
 
   console.log(`Force pushing subtree to ${remoteServerName}/${branch}...`);
   execSync(`git push ${remoteServerName} ${subtreeCommit}:refs/heads/${branch} --force --verbose`, { stdio: "inherit" });
 
-  console.log("Push successful. Switching back to development branch...");
-  execSync("git switch development", { stdio: "inherit" });
+  console.log("Push successful. Switching back to master branch...");
+  execSync("git switch master", { stdio: "inherit" });
 
   console.log("Switch successful.");
 
