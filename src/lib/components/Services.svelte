@@ -67,7 +67,7 @@
   };
 </script>
 
-<section class="relative bg-gradient-to-br from-slate-50 to-slate-100 py-20">
+<section class="relative bg-gradient-to-br from-slate-50 to-slate-100 py-20" id="services">
   <div class="absolute inset-0 overflow-hidden">
     <div class="absolute -top-40 -right-40 h-80 w-80 animate-pulse rounded-full bg-gradient-to-br from-primary-200/50 to-purple-200/50 blur"></div>
     <div class="absolute -bottom-40 -left-40 h-80 w-80 animate-pulse rounded-full bg-gradient-to-br from-orange-200/50 to-green-200/50 blur" style="animation-delay: 2s;"></div>
