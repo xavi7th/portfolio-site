@@ -5,9 +5,8 @@ import fs from "fs";
 import { execSync } from "child_process";
 
 const target = process.argv[2] || "web"; // Defaults to web
-const prefix = target === "api" ? "api" : "web";
-const remoteServerName = `${prefix}`; // Assumes remotes are named `api` and `web`. Check this out with git remote
-const branch = `deploy/${prefix}`;
+const remoteServerName = target === "api" ? "api" : "web"; // Assumes remotes are named `api` and `web`
+const branch = `deploy/${target}`;
 const CONTINUE_FILE = ".deploy_continue";
 
 // Check if we're resuming after a merge conflict
@@ -42,12 +41,12 @@ if (!isResuming) {
   fs.unlinkSync(CONTINUE_FILE);
 }
 
-// Modify .gitignore depending on the target, to allow public files to be committed
+// Modify .gitignore depending on the target, to allow build files to be committed
 if (target === "api") {
-  console.log("Updating .gitignore to allow public files...");
+  console.log("Updating .gitignore to allow build files...");
   execSync("sed -i.bak '/public\\/[build\\\\|vendor\\\\|conference]/d' ./.gitignore", { stdio: "inherit" });
 } else {
-  console.log("Updating .gitignore to allow public files...");
+  console.log("Updating .gitignore to allow build files...");
   execSync("sed -i.bak '/\\/build/d' ./.gitignore", { stdio: "inherit" });
 }
 
@@ -77,14 +76,21 @@ if (postBuildStatus) {
   console.log("No changes to commit. Proceeding with push...");
 }
 
-// Push only the relevant folder as subtree
-console.log(`Pushing changes in ${prefix} folder to ${remoteServerName}...`);
+// Push only the relevant folder either the full folder or as subtree if api comes later
+console.log(`Pushing changes to ${remoteServerName}...`);
 try {
-  console.log("Creating subtree split...");
-  const subtreeCommit = execSync(`git subtree split --prefix=${prefix} ${branch}`, { stdio: "pipe" }).toString().trim();
+  if (target == 'web') {
+    console.log(`Force pushing entire repository to ${remoteServerName}/${branch}...`);
+    execSync(`git push ${remoteServerName} ${branch} --force --verbose`, { stdio: "inherit" });
+  } else {
+    console.log(`Pushing changes in ${prefix} folder to ${remoteServerName}...`);
 
-  console.log(`Force pushing subtree to ${remoteServerName}/${branch}...`);
-  execSync(`git push ${remoteServerName} ${subtreeCommit}:refs/heads/${branch} --force --verbose`, { stdio: "inherit" });
+    console.log("Creating subtree split...");
+    const subtreeCommit = execSync(`git subtree split --prefix=${prefix} ${branch}`, { stdio: "pipe" }).toString().trim();
+
+    console.log(`Force pushing subtree to ${remoteServerName}/${branch}...`);
+    execSync(`git push ${remoteServerName} ${subtreeCommit}:refs/heads/${branch} --force --verbose`, { stdio: "inherit" });
+  }
 
   console.log("Push successful. Switching back to master branch...");
   execSync("git switch master", { stdio: "inherit" });
