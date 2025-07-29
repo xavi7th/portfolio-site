@@ -127,7 +127,7 @@
 
       <div class="flex flex-col items-baseline justify-center gap-4 sm:flex-row">
         <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-primary">Let's Talk</a>
-        <a href="/daniel-e-akhile-resume.pdf" target="_blank" class="btn-secondary flex items-center gap-2">
+        <a href="#" target="_blank" class="btn-secondary flex items-center gap-2">
           <Download size={20} />
           Download Resume
         </a>

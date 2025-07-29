@@ -2,13 +2,66 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+
+    <!-- Favicons (already included but ensure multiple sizes) -->
     <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%sveltekit.assets%/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="%sveltekit.assets%/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="%sveltekit.assets%/favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="%sveltekit.assets%/favicon-128x128.png">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Primary Meta Tags -->
+    <title>Daniel | Full-Stack Developer | Web & Mobile Solutions</title>
+    <meta name="title" content="Daniel | Full-Stack Developer | Web & Mobile Solutions">
+    <meta name="description" content="Professional portfolio of Daniel E. Akhile, a skilled full-stack developer specializing in modern web and mobile applications. View my projects and contact me for collaborations.">
+    <meta name="keywords" content="portfolio, web developer, full-stack developer, JavaScript, React, Svelte, Sveltekit, VueJS, Laravel, frontend, backend, web design">
+    <meta name="author" content="Daniel E. Akhile">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook (for social sharing) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://daniel.stafr.pro/">
+    <meta property="og:title" content="Daniel | Full-Stack Developer | Web & Mobile Solutions">
+    <meta property="og:description" content="Professional portfolio of Daniel E. Akhile, a skilled full-stack developer specializing in modern web and mobile applications.">
+    <meta property="og:image" content="%sveltekit.assets%/social-preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://daniel.stafr.pro/">
+    <meta property="twitter:title" content="Daniel | Full-Stack Developer | Web & Mobile Solutions">
+    <meta property="twitter:description" content="Professional portfolio of Daniel E. Akhile, a skilled full-stack developer specializing in modern web and mobile applications.">
+    <meta property="twitter:image" content="%sveltekit.assets%/social-preview.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://daniel.stafr.pro">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
     %sveltekit.head%
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Daniel E. Akhile",
+        "url": "https://daniel.stafr.pro",
+        "sameAs": [
+          "https://github.com/xavi7th",
+          "https://www.linkedin.com/in/danielose/",
+          "https://t.me/Leinad8th",
+          "https://x.com/leinad7th",
+          "https://www.facebook.com/leinad7th"
+        ],
+        "jobTitle": "Full-Stack Laravel/SvelteJS Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance"
+        }
+      }
+      </script>
   </head>
   <body data-sveltekit-preload-code="viewport" data-sveltekit-preload-data="hover">
     <div style="display: contents">%sveltekit.body%</div>

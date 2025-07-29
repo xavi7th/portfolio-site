@@ -1,4 +1,12 @@
-# Daniel's Portfolio Website
+<div align="center">
+  <a href="https://daniel.stafr.pro">
+    <img src="./static/dan-akhile-logo.png" alt="Daniel's Logo" width="200" style="max-width: 100%;">
+  </a>
+</div>
+
+<h1 align="center">
+  Daniel's Portfolio Website
+</h1>
 
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://daniel.stafr.pro)
 [![GitHub last commit](https://img.shields.io/github/last-commit/xavi7th/portfolio-site)](https://github.com/xavi7th/portfolio-site/commits/main)
@@ -35,7 +43,7 @@ Welcome to the source code of my personal portfolio website! This site showcases
 
 ```
 ├── src/
-│   ├── lib/    # Reusable UI components
+│   ├── lib/                 # Reusable UI components
 │   │    ├── utils.js        # Reusable utilities
 │   │    ├── assets/         # Images, fonts, etc.
 │   │    └── components/     # Reusable UI components & page sections (About, Projects, etc.)
