@@ -1,0 +1,4 @@
+# RewriteEngine On
+Options -Indexes
+ErrorDocument 403 /fallback.php
+ErrorDocument 404 /fallback.php
